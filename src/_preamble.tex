@@ -1,0 +1,36 @@
+\documentclass[11pt, paper=a4]{scrreport}
+
+\usepackage[margin=2cm,includefoot,heightrounded]{geometry}
+\usepackage[german]{babel}
+\usepackage{dirtytalk}
+\usepackage{url}
+\urlstyle{same}
+\usepackage{graphicx}
+\graphicspath{ {../images/} }
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{scrhack}
+\usepackage{chngcntr}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+\setmainfont{Arial}
+\usepackage{tcolorbox}
+\newtcolorbox{notebox}{colback=yellow!15!white,colframe=yellow!100!black}
+
+\linespread{1.25}
+\addtokomafont{chapter}{\fontsize{12}{14}\selectfont}
+\addtokomafont{section}{\fontsize{12}{14}\selectfont}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{-\baselineskip}}
+\renewcommand*{\chapterheadendvskip}{\vspace*{0.5cm}}
+
+\counterwithout{footnote}{chapter}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\title{[KURSNAME - Hausarbeit]}
+\author{Stefan Schärmeli}
+\date{[Monat Jahr]}
+
+\begin{document}

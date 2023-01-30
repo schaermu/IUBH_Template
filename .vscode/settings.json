@@ -1,0 +1,8 @@
+{
+    "texlab.build.executable": "tectonic",
+    "texlab.build.onSave": true,
+    "texlab.build.args": [
+        "-X",
+        "build"
+    ],
+}
