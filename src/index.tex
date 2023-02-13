@@ -1,66 +1,28 @@
-% LTeX: enabled=false
-\documentclass[11pt,paper=a4]{scrreport}
+\input{_preamble.tex}
 
-\usepackage[margin=2cm,includefoot,heightrounded]{geometry}
-\usepackage[main=ngerman,english]{babel}
-\usepackage{polyglossia}
-\setdefaultlanguage{german}
-\setotherlanguages{english}
-\usepackage[T1]{fontenc}
-\usepackage{fontspec}
-\usepackage{dirtytalk}
-\usepackage{url}
-\urlstyle{same}
-\usepackage{graphicx}
-\graphicspath{ {../images/} }
-\usepackage[babel,german=guillemets]{csquotes}
-\usepackage[
-  backend=biber,
-  style=apa,
-]{biblatex}
-\DeclareLanguageMapping{ngerman}{ngerman-apa}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{scrhack}
-\usepackage{chngcntr}
-\usepackage{pgfplots}
-\pgfplotsset{compat = newest}
-\setmainfont{Arial}
-\usepackage{tcolorbox}
-\newtcolorbox{notebox}{colback=yellow!15!white,colframe=yellow!100!black}
-\usepackage[xindy,toc]{glossaries}
-\usepackage{tabularx}
-
-\makeatletter
-\RequireBibliographyStyle{numeric}
-\makeatother
-\providecommand{\apashortdash}{-}
-\addbibresource{refs.bib}
-
-\makeglossaries
-\input{glossar.tex}
-
-\linespread{1.25}
-\addtokomafont{chapter}{\fontsize{12}{14}\selectfont}
-\addtokomafont{section}{\fontsize{12}{14}\selectfont}
-\renewcommand*{\chapterheadstartvskip}{\vspace*{-\baselineskip}}
-\renewcommand*{\chapterheadendvskip}{\vspace*{0.5cm}}
-
-\counterwithout{footnote}{chapter}
-\counterwithout{figure}{chapter}
-\counterwithout{table}{chapter}
-
-\title{[KURSNAME - Hausarbeit]}
+\newcommand{\paperCourse}[1]{\def\paperCourse{#1}}
+\paperCourse{Kursname}
+\newcommand{\paperType}[1]{\def\paperType{#1}}
+\paperType{Hausarbeit/Workbook}
+\newcommand{\degreeProgram}[1]{\def\degreeProgram{#1}}
+\degreeProgram{Studiengang}
+\newcommand{\studentNumber}[1]{\def\studentNumber{#1}}
+\studentNumber{Matrikelnummer}
+% \newcommand{\tutorName}[1]{\def\tutorName{#1}}
+% \tutorName{Name des Tutors}
 \author{Stefan Schärmeli}
-\date{[Monat Jahr]}
+\date{Monat/Jahr}
 
 \begin{document}
-\maketitle
+\input{titelseite.tex}
+
+\makeatother
+
 \tableofcontents
 \printglossaries
-% \include{aufgaben/aufgabe1.tex}
-% \include{aufgaben/aufgabe2.tex}
-% ...
+\include{einleitung}
+\include{hauptteil/example.tex}
+\include{abschluss}
 \printbibliography
 \listoffigures
 \listoftables

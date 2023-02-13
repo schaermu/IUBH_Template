@@ -1,0 +1,38 @@
+\begin{titlepage}
+    \begin{figure}[h]
+        \centering
+        \advance\leftskip--2cm
+        \includegraphics[width=0.4\textwidth]{logo.png}
+    \end{figure}
+    
+    \vspace{5cm}
+
+    \begin{center}
+        \begin{Large}
+            \paperType\
+        \end{Large}
+
+        \begin{large}
+            \paperCourse\ \\
+        \end{large}
+    
+        \vspace{1cm}
+
+        \begin{large}
+            Internationale Hochschule
+        \end{large}
+    \end{center}
+
+    \vspace*{\fill}
+
+    \begin{large}
+        \noindent Studiengang:\tabto{4cm} \textbf{\degreeProgram} \\
+        Name:\tabto{4cm} \textbf{\@author} \\
+        Matrikelnummer:\tabto{4cm} \textbf{\studentNumber} \\
+        \ifdefined\tutorName\
+        Tutor:\tabto{4cm} \textbf{\tutorName} \\
+        \else
+        \fi
+        Datum:\tabto{4cm} \textbf{\@date}
+    \end{large}
+ \end{titlepage}
