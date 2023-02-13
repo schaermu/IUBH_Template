@@ -1,10 +1,13 @@
 {
     "editor.wordWrap": "on",
-    "texlab.build.executable": "tectonic",
     "texlab.build.onSave": true,
     "texlab.build.args": [
-        "-X",
-        "build"
+        "-xelatex",
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "-auxdir=../build",
+        "-outdir=../build",
+        "%f"
     ],
     "ltex.language": "de-CH",
 }
