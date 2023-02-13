@@ -2,5 +2,5 @@
 *.log
 *.aux
 *.toc
-build/
+out.nosync/
 *.Identifier

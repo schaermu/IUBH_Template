@@ -1,13 +1,22 @@
 {
     "editor.wordWrap": "on",
-    "texlab.build.onSave": true,
-    "texlab.build.args": [
-        "-xelatex",
-        "-interaction=nonstopmode",
-        "-synctex=1",
-        "-auxdir=../build",
-        "-outdir=../build",
-        "index.tex"
+    "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/out.nosync",
+    "latex-workshop.latex.tools": [
+        {
+          "name": "latexmk",
+          "command": "latexmk",
+          "args": [
+            "-xelatex",
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-auxdir=%OUTDIR%",
+            "-outdir=%OUTDIR%",
+            "-e", "$bibtex_fudge=1",
+            "%DOC%"
+          ],
+          "env": {}
+        },
     ],
     "ltex.language": "de-CH",
 }
