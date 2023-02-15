@@ -9,6 +9,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[final]{microtype}
 \usepackage{fontspec}
+\setmainfont{Arial}
+\newfontfamily{\defaultfont}{Arial}
 \usepackage{dirtytalk}
 \usepackage{url}
 \urlstyle{same}
@@ -26,10 +28,9 @@
 \usepackage{chngcntr}
 \usepackage{pgfplots}
 \pgfplotsset{compat = newest}
-\setmainfont{Arial}
 \usepackage{tcolorbox}
 \newtcolorbox{notebox}{colback=yellow!15!white,colframe=yellow!100!black}
-\usepackage[xindy,toc]{glossaries}
+\usepackage[xindy,nonumberlist,style=index,acronym]{glossaries}\setacronymstyle{long-short}
 \usepackage{tabularx}
 \usepackage{tabto}
 
@@ -43,6 +44,8 @@
 \input{glossar.tex}
 
 \linespread{1.25}
+\addtokomafont{disposition}{\defaultfont}
+\addtokomafont{descriptionlabel}{\defaultfont}
 \addtokomafont{chapter}{\fontsize{12}{14}\selectfont}
 \addtokomafont{section}{\fontsize{12}{14}\selectfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{-\baselineskip}}
