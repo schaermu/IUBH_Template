@@ -1,14 +1,19 @@
 % LTeX: enabled=false
-\documentclass[11pt,paper=a4]{scrreport}
+\documentclass[11pt,paper=a4,parskip=full]{scrreport}
 
 \usepackage[margin=2cm,includefoot,heightrounded]{geometry}
+\usepackage{hyphenat}
 \usepackage[main=ngerman,english]{babel}
+\useshorthands{~}
+\defineshorthand{~-}{\hyp{}}
 \usepackage{polyglossia}
 \setdefaultlanguage{german}
 \setotherlanguages{english}
 \usepackage[T1]{fontenc}
 \usepackage[final]{microtype}
 \usepackage{fontspec}
+\setmainfont{Arial}
+\newfontfamily{\defaultfont}{Arial}
 \usepackage{dirtytalk}
 \usepackage{url}
 \urlstyle{same}
@@ -39,10 +44,12 @@
 \providecommand{\apashortdash}{-}
 \addbibresource{refs.bib}
 
-\makeglossaries
-\input{glossar.tex}
+\makeglossaries{}
+\loadglsentries{glossar}
 
 \linespread{1.25}
+\addtokomafont{disposition}{\defaultfont}
+\addtokomafont{descriptionlabel}{\defaultfont}
 \addtokomafont{chapter}{\fontsize{12}{14}\selectfont}
 \addtokomafont{section}{\fontsize{12}{14}\selectfont}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{-\baselineskip}}
