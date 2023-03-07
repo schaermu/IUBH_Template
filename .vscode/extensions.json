@@ -2,6 +2,7 @@
     "recommendations": [
         "valentjn.vscode-ltex",
         "James-Yu.latex-workshop",
+        "tecosaur.latex-utilities",
         "tomoki1207.pdf"
     ]
 }
