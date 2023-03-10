@@ -3,6 +3,8 @@
 
 \usepackage[margin=2cm,includefoot,heightrounded]{geometry}
 \usepackage{hyphenat}
+\usepackage{setspace}
+\onehalfspacing
 \usepackage[main=ngerman,english]{babel}
 \useshorthands{~}
 \defineshorthand{~-}{\hyp{}}
@@ -30,6 +32,7 @@
 \usepackage{amsfonts}
 \usepackage{scrhack}
 \usepackage{chngcntr}
+\usepackage[table,dvipsnames]{xcolor}
 \usepackage{pgfplots}
 \pgfplotsset{compat = newest}
 \usepackage{tcolorbox}
@@ -37,6 +40,9 @@
 \usepackage[xindy,nonumberlist,nogroupskip,style=index,acronym]{glossaries}
 \setacronymstyle{long-short}
 \usepackage{tabularx}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+\renewcommand{\arraystretch}{1.5}% for the vertical padding
 \usepackage{tabto}
 \usepackage{enumitem}
 
