@@ -1,8 +1,11 @@
 % LTeX: enabled=false
-\documentclass[11pt,paper=a4,parskip=full]{scrreport}
+\documentclass[11pt,paper=a4,parskip=half,listof=nochaptergap]{scrreport}
+\KOMAoption{footnotes}{multiple}
 
 \usepackage[margin=2cm,includefoot,heightrounded]{geometry}
 \usepackage{hyphenat}
+\usepackage{setspace}
+\onehalfspacing
 \usepackage[main=ngerman,english]{babel}
 \useshorthands{~}
 \defineshorthand{~-}{\hyp{}}
@@ -13,6 +16,7 @@
 \usepackage[final]{microtype}
 \usepackage{fontspec}
 \setmainfont{Arial}
+\setsansfont{Arial}
 \newfontfamily{\defaultfont}{Arial}
 \usepackage{dirtytalk}
 \usepackage{url}
@@ -29,13 +33,23 @@
 \usepackage{amsfonts}
 \usepackage{scrhack}
 \usepackage{chngcntr}
+\usepackage[table,dvipsnames]{xcolor}
 \usepackage{pgfplots}
-\pgfplotsset{compat = newest}
+\pgfplotsset{compat=newest}
 \usepackage{tcolorbox}
 \newtcolorbox{notebox}{colback=yellow!15!white,colframe=yellow!100!black}
-\usepackage[xindy,nonumberlist,style=index,acronym]{glossaries}\setacronymstyle{long-short}
+\usepackage[xindy,nonumberlist,nogroupskip,style=index,acronym]{glossaries}
+\setacronymstyle{long-short}
 \usepackage{tabularx}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}X{#1}}
+\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+\renewcommand{\arraystretch}{1.5}% for the vertical padding
+\usepackage{multirow}
+\usepackage{stackengine}
+\newcommand\xrowht[2][0]{\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
 \usepackage{tabto}
+\usepackage{enumitem}
 
 \makeatletter
 \emergencystretch=1em
@@ -46,7 +60,6 @@
 \makeglossaries{}
 \loadglsentries{glossar}
 
-\linespread{1.25}
 \addtokomafont{disposition}{\defaultfont}
 \addtokomafont{descriptionlabel}{\defaultfont}
 \addtokomafont{chapter}{\fontsize{12}{14}\selectfont}
