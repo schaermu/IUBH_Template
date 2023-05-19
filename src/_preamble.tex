@@ -27,6 +27,8 @@
 \usepackage[
   backend=biber,
   style=apa,
+  natbib=true,
+  defernumbers=true
 ]{biblatex}
 \DeclareLanguageMapping{ngerman}{ngerman-apa}
 \usepackage{amsmath}
@@ -56,6 +58,7 @@
 \RequireBibliographyStyle{numeric}
 \providecommand{\apashortdash}{-}
 \addbibresource{refs.bib}
+\AtEveryCitekey{\ifnameundef{shortauthor}{}{\def\cbx@apa@ifnamesaved{\@firstoftwo}}}
 
 \makeglossaries{}
 \loadglsentries{glossar}
