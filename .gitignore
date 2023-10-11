@@ -4,3 +4,4 @@
 *.toc
 out.nosync/
 *.Identifier
+_minted-*

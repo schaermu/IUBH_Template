@@ -38,6 +38,14 @@
 \usepackage[table,dvipsnames]{xcolor}
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
+\usepgfplotslibrary{statistics}
+\pgfplotsset{
+  legend image with text/.style={
+      legend image code/.code={%
+          \node[anchor=center] at (0.3cm,0cm) {#1};
+        }
+    },
+}
 \usepackage{tcolorbox}
 \newtcolorbox{notebox}{colback=yellow!15!white,colframe=yellow!100!black}
 \usepackage[xindy,nonumberlist,nogroupskip,style=index,acronym]{glossaries}
@@ -52,6 +60,7 @@
 \newcommand\xrowht[2][0]{\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
 \usepackage{tabto}
 \usepackage{enumitem}
+\usepackage{minted}
 
 \makeatletter
 \emergencystretch=1em
@@ -73,3 +82,10 @@
 \counterwithout{footnote}{chapter}
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
